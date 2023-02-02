@@ -14,6 +14,10 @@
 		8143888D2982C6B300B96CE4 /* BaJProjetsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8143888C2982C6B300B96CE4 /* BaJProjetsonTests.swift */; };
 		814388972982C6B300B96CE4 /* BaJProjetsonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814388962982C6B300B96CE4 /* BaJProjetsonUITests.swift */; };
 		814388992982C6B300B96CE4 /* BaJProjetsonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814388982982C6B300B96CE4 /* BaJProjetsonUITestsLaunchTests.swift */; };
+		814388A62982CB2700B96CE4 /* Modele.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814388A52982CB2700B96CE4 /* Modele.swift */; };
+		814388A82982CB4F00B96CE4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814388A72982CB4F00B96CE4 /* ViewModel.swift */; };
+		814388AA2982CBFE00B96CE4 /* koori.json in Resources */ = {isa = PBXBuildFile; fileRef = 814388A92982CBFE00B96CE4 /* koori.json */; };
+		814388AE2983DCCF00B96CE4 /* formulaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814388AD2983DCCF00B96CE4 /* formulaire.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		814388922982C6B300B96CE4 /* BaJProjetsonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaJProjetsonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		814388962982C6B300B96CE4 /* BaJProjetsonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaJProjetsonUITests.swift; sourceTree = "<group>"; };
 		814388982982C6B300B96CE4 /* BaJProjetsonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaJProjetsonUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		814388A52982CB2700B96CE4 /* Modele.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modele.swift; sourceTree = "<group>"; };
+		814388A72982CB4F00B96CE4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		814388A92982CBFE00B96CE4 /* koori.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = koori.json; sourceTree = "<group>"; };
+		814388AD2983DCCF00B96CE4 /* formulaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formulaire.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +104,12 @@
 			children = (
 				8143887B2982C6B100B96CE4 /* BaJProjetsonApp.swift */,
 				8143887D2982C6B100B96CE4 /* ContentView.swift */,
+				814388AD2983DCCF00B96CE4 /* formulaire.swift */,
+				814388A52982CB2700B96CE4 /* Modele.swift */,
+				814388A72982CB4F00B96CE4 /* ViewModel.swift */,
 				8143887F2982C6B300B96CE4 /* Assets.xcassets */,
 				814388812982C6B300B96CE4 /* Preview Content */,
+				814388A92982CBFE00B96CE4 /* koori.json */,
 			);
 			path = BaJProjetson;
 			sourceTree = "<group>";
@@ -232,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				814388832982C6B300B96CE4 /* Preview Assets.xcassets in Resources */,
+				814388AA2982CBFE00B96CE4 /* koori.json in Resources */,
 				814388802982C6B300B96CE4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,7 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8143887E2982C6B100B96CE4 /* ContentView.swift in Sources */,
+				814388A62982CB2700B96CE4 /* Modele.swift in Sources */,
+				814388A82982CB4F00B96CE4 /* ViewModel.swift in Sources */,
 				8143887C2982C6B100B96CE4 /* BaJProjetsonApp.swift in Sources */,
+				814388AE2983DCCF00B96CE4 /* formulaire.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UT8V43697P;
@@ -529,6 +546,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UT8V43697P;

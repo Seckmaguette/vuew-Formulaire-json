@@ -18,6 +18,7 @@
 		814388A82982CB4F00B96CE4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814388A72982CB4F00B96CE4 /* ViewModel.swift */; };
 		814388AA2982CBFE00B96CE4 /* koori.json in Resources */ = {isa = PBXBuildFile; fileRef = 814388A92982CBFE00B96CE4 /* koori.json */; };
 		814388AE2983DCCF00B96CE4 /* formulaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814388AD2983DCCF00B96CE4 /* formulaire.swift */; };
+		814388C2298C097A00B96CE4 /*  DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814388C1298C097A00B96CE4 /*  DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		814388A72982CB4F00B96CE4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		814388A92982CBFE00B96CE4 /* koori.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = koori.json; sourceTree = "<group>"; };
 		814388AD2983DCCF00B96CE4 /* formulaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = formulaire.swift; sourceTree = "<group>"; };
+		814388C1298C097A00B96CE4 /*  DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " DetailsView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		8143886F2982C6B100B96CE4 = {
 			isa = PBXGroup;
 			children = (
+				814388C1298C097A00B96CE4 /*  DetailsView.swift */,
 				8143887A2982C6B100B96CE4 /* BaJProjetson */,
 				8143888B2982C6B300B96CE4 /* BaJProjetsonTests */,
 				814388952982C6B300B96CE4 /* BaJProjetsonUITests */,
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				814388C2298C097A00B96CE4 /*  DetailsView.swift in Sources */,
 				8143887E2982C6B100B96CE4 /* ContentView.swift in Sources */,
 				814388A62982CB2700B96CE4 /* Modele.swift in Sources */,
 				814388A82982CB4F00B96CE4 /* ViewModel.swift in Sources */,

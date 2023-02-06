@@ -18,7 +18,8 @@ import SwiftUI
 
 
 struct formulaire: View {
-    @ObservedObject var dataLoader = ListPersonViewModel()
+//    @ObservedObject var dataLoader = ListPersonViewModel()
+    @EnvironmentObject var dataLoader:ListPersonViewModel
     
     
 //    @State var id:String = ""
@@ -51,10 +52,11 @@ struct formulaire: View {
                     
                     Button(action:{
                         
-                        dataLoader.people.append(Person(id:18,avatar:userName , nomComplet:userName , email: adress , profession:profession , service: service, departement: departement, direction:direction))
-                        print(dataLoader.people)
-                        
-                        dataLoader.validate(person: dataLoader.people)
+                        let person = Person (id:18,avatar:userName , nomComplet:userName , email: adress , profession:profession , service: service, departement: departement, direction:direction)
+                   dataLoader.people.append(person)
+                        print("vous avez ajoutez \([dataLoader.people]) maintenant je l'evoie sur valider")
+            
+                        dataLoader.validate()
                         
                     })
                     {
@@ -70,7 +72,8 @@ struct formulaire: View {
                 //            fermuture vStack
                 .padding()
             }
-      
+        .navigationTitle("New Contact")
+        .navigationBarTitleDisplayMode(.inline)
         }
 //        vstack
     }
@@ -192,6 +195,9 @@ struct  monTextfield2: View {
 //            .textFieldStyle(.roundedBorder)
             .background(Color.white)
 //            .cornerRadius(35)
+        
+        
+        
     }
 }
 
@@ -205,8 +211,15 @@ struct  monTextfield3: View {
             Text("Docteur").tag("Docteur")
             Text("Comptablite").tag("Comptble")
             Text("Programmation").tag("programmeur")
-        }.pickerStyle(.navigationLink)
+        }.pickerStyle(.automatic)
             .foregroundColor(Color.black)
+            .frame(height: 45)
+            .frame(width: 260)
+
+            .overlay( RoundedRectangle(cornerRadius:5)
+            .strokeBorder(Color.black,lineWidth: 2))
+            .foregroundColor(Color.black)
+            .background(Color.white)
 //        TextField("profession", text: $profession)
 //            .frame(height: 45)
 //            .frame(width: 260)
@@ -234,8 +247,14 @@ struct  monTextfield4: View {
             Text("SERVICE COMMERCIAL").tag("service commercial")
             Text("SERVICE COMPTABLE").tag("Service Comptable")
             Text("Service RH").tag("Service des ressource humaine")
-        }.pickerStyle(.navigationLink)
+        }.pickerStyle(.automatic)
+            .frame(height: 45)
+            .frame(width: 260)
+
+            .overlay( RoundedRectangle(cornerRadius:5)
+            .strokeBorder(Color.black,lineWidth: 2))
             .foregroundColor(Color.black)
+            .background(Color.white)
 //            .frame(height: 45)
 //            .frame(width: 260)
 //
@@ -262,23 +281,26 @@ struct  monTextfield5: View {
             Text("SERVICE COMMERCIAL").tag("service commercial")
             Text("SERVICE COMPTABLE").tag("Service Comptable")
             Text("Service RH").tag("Service des ressource humaine")
-        }.pickerStyle(.wheel)
+        }.pickerStyle(.automatic)
 
-            .foregroundColor(Color.black)
+            
 //        TextField("departement", text: $departement)
-//            .frame(height: 45)
-//            .frame(width: 260)
+            .frame(height: 45)
+            .frame(width: 260)
+
+            .overlay( RoundedRectangle(cornerRadius:5)
+            .strokeBorder(Color.black,lineWidth: 2))
 //
-//            .overlay( RoundedRectangle(cornerRadius:5)
+//            .overlay( RoundedRectangle(cornerRadius:5))
 //            .strokeBorder(Color.black,lineWidth: 2))
 ////            .padding()
 ////            .border(.black)
 ////            .padding(.bottom,20.0)
 ////            .frame(width: 355, height: 75)
-//            .foregroundColor(Color.black)
+            .foregroundColor(Color.black)
 //
-////            .textFieldStyle(.roundedBorder)
-//            .background(Color.white)
+//            .textFieldStyle(.roundedBorder)
+            .background(Color.white)
 //            .cornerRadius(35)
     }
 }
@@ -293,8 +315,15 @@ struct  monTextfield6: View {
             Text("DSC").tag("dsc")
             Text("DC").tag("dc")
             Text("DRH").tag("drh")
-        }.pickerStyle(.segmented)
+        }.pickerStyle(.automatic)
         
+            .frame(height: 45)
+            .frame(width: 260)
+
+            .overlay( RoundedRectangle(cornerRadius:5)
+            .strokeBorder(Color.black,lineWidth: 2))
+            .foregroundColor(Color.black)
+            .background(Color.white)
 //        TextField("direction", text: $direction)
 //            .frame(height: 45)
 //            .frame(width: 260)

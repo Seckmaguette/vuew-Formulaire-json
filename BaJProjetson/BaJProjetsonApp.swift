@@ -12,8 +12,10 @@ struct BaJProjetsonApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-//            formulaire()
-
+            //            formulaire()
+            //            DetailsView()
+            
         }
     }
+    
 }

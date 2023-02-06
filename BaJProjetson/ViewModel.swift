@@ -22,37 +22,46 @@ class ListPersonViewModel: ObservableObject {
                 }
             }
         }
+// la methode  addPerson permet   ajouter un nouveau objet
     
-    func validate(person :[Person]){
-//        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first! )
-        
-        let desktop = URL(fileURLWithPath: "/Users/STG_SECK69085/Documents/TryAgain/BaJProjetson/BaJProjetson")
-
-        do {
-            let temporaryDirectory = try FileManager.default.url(
-                for: .itemReplacementDirectory,
-                in: .userDomainMask,
-                appropriateFor: desktop,
-                create: false
-            )
-            
-            print(temporaryDirectory)
-        } catch {
-            // Handle the error.
-        }
+      func addPerson(person: Person){
          
-            if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                let fileURL = documentsDirectory.appendingPathComponent("koori.json")
-                //let desktop = URL(fileURLWithPath: "/Users/STG_SECK69085/Documents/TryAgain/BaJProjetson/BaJProjetson/koori.json")
+          people.append(person)
+      }
+    
+    func validate(){
 
-                do {
-                    let data = try JSONEncoder().encode([person])
-                    try data.write(to: fileURL)
-                    print("File saved successfully!")
-                } catch {
-                    print("Failed to save file: \(error.localizedDescription)")
-                }
-            }
+        if let url = Bundle.main.url(forResource: "koori", withExtension: "json"){
+                   do{
+                       let encoderData = try JSONEncoder().encode(people)
+                       let jsonString = String(data: encoderData, encoding: .utf8)
+                       
+                       print(" objet json a été bien encoder \(String(describing: jsonString))")
+                       try encoderData.write(to: url)
+                       print("\n \(url)")
+                       
+                   }catch{
+                       print("je peux pas poster car cette \(error)")
+                   }
+               }else{
+                   print("je suis sortie car je vous pas le chemin")
+               }
+
+//            if let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+//                let fileURL = documentsDirectory.appendingPathComponent("koori.json")
+//                print("le file to url : \(fileURL)")
+//                //let desktop = URL(fileURLWithPath: "/Users/STG_SECK69085/Documents/TryAgain/BaJProjetson/BaJProjetson/koori.json")
+//
+//                do {
+//                    let data = try JSONEncoder().encode(people)
+//                    try data.write(to: fileURL)
+//                    print(" objet json encode \(data)")
+//                    print("File saved successfully!")
+//                } catch {
+//                    print("Failed to save file: \(error.localizedDescription)")
+//                }
+//            }
+//
         }
 
     }

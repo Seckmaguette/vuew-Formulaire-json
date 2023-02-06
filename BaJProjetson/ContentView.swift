@@ -8,34 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showModal = false
-    
+    @StateObject var dataLoader:ListPersonViewModel=ListPersonViewModel()
+//    @State private var showModal2 = false
+  
 
     var body: some View {
-//        Image(systemName: "plus.circle")
-//        @State private var isLinkActive = false
-        Button(" SignUp") {
-                 self.showModal = true
-             }
-             .sheet(isPresented: $showModal) {
-                 formulaire()
-             }
+        
 
         VStack {
             
             HStack{
                 
          
-//            NavigationView {
-//                       VStack {
-//                           NavigationLink(destination: formulaire()) {
-//                               Text("SignUP").fontWeight(.bold)
-//                           }
-//                       }
-//                   }
-           
                 
-            }.padding(.bottom ,150)
+            }.padding(.bottom )
             
             HStack{
                             PersonList( )
@@ -48,54 +34,79 @@ struct ContentView: View {
             
         
         }
+        .environmentObject(dataLoader)
         .padding()
         
     }
-}
-
-struct PersonList: View {
-    @ObservedObject var dataLoader = ListPersonViewModel()
-
-    var body: some View {
+    struct PersonList: View {
+      
+        @EnvironmentObject var dataLoader:ListPersonViewModel
         
+        @State private var showModal = false
 
-        ZStack{
+        var body: some View {
+            
          
-            
-            Text("LIte Of Koori")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-            
-            List(dataLoader.people) { person in
-                HStack{
-                    AsyncImage(url: URL(string: "\(person.avatar)")) { image in
-                        image.resizable()
-                            .frame(width:50, height: 50)
 
-                            .clipped()
-                            .aspectRatio(contentMode: .fill)
-                            .cornerRadius(150)
-                            .padding(.bottom,3)
 
-                    } placeholder: {
-                        ProgressView()
+            ZStack{
+             
+                
+                Text("LIte Of Koori")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+            
+                List(dataLoader.people) { person in
+                    HStack{
+                        AsyncImage(url: URL(string: "\(person.avatar)")) { image in
+                            image.resizable()
+                                .frame(width:50, height: 50)
+
+                                .clipped()
+                                .aspectRatio(contentMode: .fill)
+                                .cornerRadius(150)
+                                .padding(.bottom,3)
+
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(width: 50, height: 50)
+                        Text(person.nomComplet)
+                        Spacer()
+                        Text(person.direction)
+    //
+    //
                     }
-                  
-                    Text(person.nomComplet)
-                    Spacer()
-                    Text(person.direction)
-//
-//
+  
+                    
                 }
+                
+                .onAppear {
+                    self.dataLoader.loadData()
+    //                self.people = people
+                }
+    
+                    
+                    Button(" SignUp") {
+                             self.showModal = true
+                         }
+                         .sheet(isPresented: $showModal) {
+                             formulaire()
+                         }
+                    
+                .padding(.top,300)
+                
+                
+    //            fin vstack
+
             }
-            .onAppear {
-                self.dataLoader.loadData()
-            }
-            
-//            fin vstack
         }
     }
+
+    
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

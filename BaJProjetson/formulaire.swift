@@ -52,7 +52,7 @@ struct formulaire: View {
                     
                     Button(action:{
                         
-                        let person = Person (id:18,avatar:userName , nomComplet:userName , email: adress , profession:profession , service: service, departement: departement, direction:direction)
+                        let person = Person (id:7,avatar:userName , nomComplet:userName , email: adress , profession:profession , service: service, departement: departement, direction:direction)
                    dataLoader.people.append(person)
                         print("vous avez ajoutez \([dataLoader.people]) maintenant je l'evoie sur valider")
             
